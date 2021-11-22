@@ -24,6 +24,7 @@ import { CoursesService } from "./courses.service";
         <table>
             <tr>
                 <td [attr.colspan]="colSpan">  </td>
+                <button class="btn btn-primary">Save</button>
             </tr>
         </table>
     `
