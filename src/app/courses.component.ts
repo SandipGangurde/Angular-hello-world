@@ -25,6 +25,7 @@ import { CoursesService } from "./courses.service";
             <tr>
                 <td [attr.colspan]="colSpan">  </td>
                 <button class="btn btn-primary" [class.active]="isActive">Save</button>
+                <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Cancel</button>
             </tr>
         </table>
     `
@@ -39,7 +40,7 @@ import { CoursesService } from "./courses.service";
         courses;
         imageUrl="https://images.indianexpress.com/2020/04/online759.jpg";
         colSpan=2;
-        isActive=true;
+        isActive=false;
 
         constructor(service: CoursesService) {
             //let service = new CoursesService();
