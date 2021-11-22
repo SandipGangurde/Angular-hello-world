@@ -3,16 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoursesComponent } from './courses.component';
+import { CourseComponent } from './course/course.component';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoursesService } from './courses.service';
+import { AuthorComponent } from './author.component';
+import { AuthorService } from './author.service';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CourseComponent,
+    CoursesComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    CoursesService,
+    AuthorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
