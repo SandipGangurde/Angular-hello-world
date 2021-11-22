@@ -24,7 +24,7 @@ import { CoursesService } from "./courses.service";
         <table>
             <tr>
                 <td [attr.colspan]="colSpan">  </td>
-                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-primary" [class.active]="isActive">Save</button>
             </tr>
         </table>
     `
@@ -39,6 +39,8 @@ import { CoursesService } from "./courses.service";
         courses;
         imageUrl="https://images.indianexpress.com/2020/04/online759.jpg";
         colSpan=2;
+        isActive=true;
+
         constructor(service: CoursesService) {
             //let service = new CoursesService();
             this.courses = service.getCourses();
