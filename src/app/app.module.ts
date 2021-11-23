@@ -12,6 +12,8 @@ import { CoursesService } from './courses.service';
 import { AuthorComponent } from './author.component';
 import { AuthorService } from './author.service';
 import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 
 
@@ -21,7 +23,9 @@ import { SummaryPipe } from './summary.pipe';
     CourseComponent,
     CoursesComponent,
     AuthorComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,
