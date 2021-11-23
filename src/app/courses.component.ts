@@ -56,8 +56,19 @@ import { CoursesService } from "./courses.service";
         <input #email (keyup.enter)="onKeyUp(email.value)" />
     `
     */
-    template: `
+    /*
+      //Two Way binding
+    
+      template: `
         <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+    `
+     */
+    template: `
+        {{ course.title | uppercase | lowercase }} <br/>
+        {{ course.rating | number:'1.1-1' }} <br/>
+        {{ course.students | number }} <br/>
+        {{ course.price | currency:'AUD':true:'3.2-2' }} <br/>
+        {{ course.releaseDate | date:'shortDate'}} <br/>
     `
   })
   export class CoursesComponent {
@@ -110,10 +121,20 @@ import { CoursesService } from "./courses.service";
             console.log(email)
         }
         */
-
+        /* Two way binding
+        
         email:any="sandip50sandip@gmail.com";
         onKeyUp() {
             console.log(this.email)
+        }
+        */
+
+        course = {
+            title: "The Complete Angular Course",
+            rating: 4.9745,
+            students: 30123,
+            price: 190.95,
+            releaseDate: new Date()
         }
         
   }
