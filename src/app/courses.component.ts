@@ -38,15 +38,23 @@ import { CoursesService } from "./courses.service";
     ` 
     */
     
-    /*
+    /* //Event Filtering
     template: `
         <input (keyup)="onKeyUp($event)" />
     `
-    */
+    
     template: `
         <input (keyup.enter)="onKeyUp()" />
     `
+    */
 
+    /*template: `
+        <input (keyup.enter)="onKeyUp($event)" />
+    `
+    */
+    template: `
+        <input #email (keyup.enter)="onKeyUp(email.value)" />
+    `
   })
   export class CoursesComponent {
       title="List of courses";
@@ -78,13 +86,24 @@ import { CoursesService } from "./courses.service";
             console.log("div was clicked")
         }
         */
-        /*
+        /* //Event Filtering
         onKeyUp($event:any) {
             if($event.keyCode === 13)
                 console.log("ENTER was pressed")
         }
-        */
+
         onKeyUp() {
             console.log("ENTER was pressed")
         }
+
+        */
+        /*
+        onKeyUp($event:any) {
+            console.log($event.target.value)
+        }
+        */
+        onKeyUp(email:any) {
+            console.log(email)
+        }
+        
   }
