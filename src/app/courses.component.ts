@@ -30,11 +30,23 @@ import { CoursesService } from "./courses.service";
             </tr>
         </table>
     `*/
+    /* //Event Binding
     template:  `
         <div (click)="onDivClicked()">
             <button (click)="onSave($event)" class="btn btn-primary">Save</button>
         </div>
+    ` 
+    */
+    
+    /*
+    template: `
+        <input (keyup)="onKeyUp($event)" />
     `
+    */
+    template: `
+        <input (keyup.enter)="onKeyUp()" />
+    `
+
   })
   export class CoursesComponent {
       title="List of courses";
@@ -55,12 +67,24 @@ import { CoursesService } from "./courses.service";
         }
         */
         // Logic for calling an HTTP service
+        
+        /* //Event Binding
         onSave($event:any) {
-            $event.stopPropagation();  //venilla javascript standard method not to click all method or bubble up is stoping 
+            $event.stopPropagation();  //venilla javascript standard method not to click all method or stop bubbling up is stoping 
 
             console.log("Button was clicked", $event);
         }
         onDivClicked() {
             console.log("div was clicked")
+        }
+        */
+        /*
+        onKeyUp($event:any) {
+            if($event.keyCode === 13)
+                console.log("ENTER was pressed")
+        }
+        */
+        onKeyUp() {
+            console.log("ENTER was pressed")
         }
   }
