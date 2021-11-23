@@ -48,12 +48,16 @@ import { CoursesService } from "./courses.service";
     `
     */
 
-    /*template: `
+    /* //Template Varibles
+    template: `
         <input (keyup.enter)="onKeyUp($event)" />
+    `
+    template: `
+        <input #email (keyup.enter)="onKeyUp(email.value)" />
     `
     */
     template: `
-        <input #email (keyup.enter)="onKeyUp(email.value)" />
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     `
   })
   export class CoursesComponent {
@@ -97,13 +101,19 @@ import { CoursesService } from "./courses.service";
         }
 
         */
-        /*
+        /* //Template Varibles
         onKeyUp($event:any) {
             console.log($event.target.value)
         }
-        */
+
         onKeyUp(email:any) {
             console.log(email)
+        }
+        */
+
+        email:any="sandip50sandip@gmail.com";
+        onKeyUp() {
+            console.log(this.email)
         }
         
   }
