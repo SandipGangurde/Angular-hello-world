@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesService } from './courses.service';
 import { AuthorComponent } from './author.component';
 import { AuthorService } from './author.service';
+import { SummaryPipe } from './summary.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { AuthorService } from './author.service';
     AppComponent,
     CourseComponent,
     CoursesComponent,
-    AuthorComponent
+    AuthorComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,
