@@ -19,6 +19,7 @@ import { CoursesService } from "./courses.service";
     //     <img src="{{ imageUrl }}" />
     //     <img [src]="imageUrl" />
     // `
+    /*
     template:`
         <img [src]="imageUrl" />
         <table>
@@ -28,6 +29,11 @@ import { CoursesService } from "./courses.service";
                 <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Cancel</button>
             </tr>
         </table>
+    `*/
+    template:  `
+        <div (click)="onDivClicked()">
+            <button (click)="onSave($event)" class="btn btn-primary">Save</button>
+        </div>
     `
   })
   export class CoursesComponent {
@@ -37,6 +43,7 @@ import { CoursesService } from "./courses.service";
     //       return this.title;
     //   }
 
+        /*
         courses;
         imageUrl="https://images.indianexpress.com/2020/04/online759.jpg";
         colSpan=2;
@@ -46,6 +53,14 @@ import { CoursesService } from "./courses.service";
             //let service = new CoursesService();
             this.courses = service.getCourses();
         }
-
+        */
         // Logic for calling an HTTP service
+        onSave($event:any) {
+            $event.stopPropagation();  //venilla javascript standard method not to click all method or bubble up is stoping 
+
+            console.log("Button was clicked", $event);
+        }
+        onDivClicked() {
+            console.log("div was clicked")
+        }
   }
