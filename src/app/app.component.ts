@@ -24,4 +24,8 @@ export class AppComponent {
   }
   
   courses = [1,2];
+
+  // ngSwitchCase start
+  viewMode='map';
+  // ngSwitchCase end
 }
