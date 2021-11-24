@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
@@ -10,7 +10,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
     } 
   `],
   */
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class FavoriteComponent {
   title:any;
