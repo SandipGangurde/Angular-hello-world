@@ -23,7 +23,7 @@ export class AppComponent {
     isLiked:true
   }
   
-  // courses = [1,2];
+  courses : any = [];
 
   // ngSwitchCase start
   viewMode='map';
@@ -37,7 +37,7 @@ export class AppComponent {
     {id:3, name:'course3'},
     {id:4, name:'course4'},
   ];*/
-  courses:any;
+  // courses:any;
   //ngFor end
   //<!-- ngFor Change detection start -->
   onAdd() {
