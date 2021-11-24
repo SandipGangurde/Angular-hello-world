@@ -85,3 +85,19 @@
     </li>
 </ul>
 <!-- ngFor and TrackBy end -->
+
+<!-- The Leading Asterisk start -->
+<div *ngIf="courses.length > 0; else noCourses">
+    List of courses
+</div>
+
+<ng-template [ngIf]="courses.length > 0">
+    <div>
+        List of courses
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="!(courses.length > 0)">
+    No courses
+</ng-template>
+<!-- The Leading Asterisk end -->
