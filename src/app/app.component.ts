@@ -66,4 +66,8 @@ export class AppComponent {
   trackCourse(index:any, course:any) {
     //return course ? this.courses.id : this.courses.id;
   }
+
+  //ngStyle start
+  canSave=false;
+  //ngStyle end
 }
