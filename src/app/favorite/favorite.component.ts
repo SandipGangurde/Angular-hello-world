@@ -1,23 +1,24 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'; //'1st way of the input parameter
-//import { Component, OnInit } from '@angular/core'; //2nd way of the input parameter
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css'],
-  //inputs: ['isFavorite'] //2nd way of the input parameter
+  
+  /*
+   styles: [`
+    .bi{
+      color:red;
+    } 
+  `],
+  */
+  styleUrls: ['./favorite.component.css']
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
   title:any;
-  @Input('isFavorite') isSelected: boolean = false; //'1st way of the input parameter
-
+  @Input('isFavorite') isSelected: boolean = false; 
   @Output('change') click = new EventEmitter();
 
   constructor() { }
   
-  ngOnInit(): void {
-  }
-  
-  //isFavorite: boolean = false;
   onClick() {
     this.isSelected = !this.isSelected;
     this.click.emit({newValue: this.isSelected});
