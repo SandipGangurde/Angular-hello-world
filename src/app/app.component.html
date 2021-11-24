@@ -63,3 +63,14 @@
     </li>
 </ul>
 <!-- ngFor end -->
+
+<!-- ngFor Change detection start -->
+<button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses;"> 
+        {{ course.name }}
+        <!-- <button (click)="onRemove(course)">Remove</button> -->
+        <button (click)="onChange(course)">Update</button>
+    </li>
+</ul>
+<!-- ngFor Change detection end -->

@@ -37,4 +37,18 @@ export class AppComponent {
     {id:4, name:'course4'},
   ];
   //ngFor end
+  //<!-- ngFor Change detection start -->
+  onAdd() {
+    this.courses.push({id: 5, name:'course5'});
+  }
+
+  onRemove(course:any){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+
+  onChange(course:any){
+    course.name = "UPDATED";
+  }
+  //<!-- ngFor Change detection end -->
 }
