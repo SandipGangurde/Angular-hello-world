@@ -10,7 +10,7 @@ export class FavoriteComponent implements OnInit {
   title:any;
   @Input('isFavorite') isSelected: boolean = false; //'1st way of the input parameter
 
-  @Output() change = new EventEmitter();
+  @Output('change') click = new EventEmitter();
 
   constructor() { }
   
@@ -20,7 +20,7 @@ export class FavoriteComponent implements OnInit {
   //isFavorite: boolean = false;
   onClick() {
     this.isSelected = !this.isSelected;
-    this.change.emit({newValue: this.isSelected});
+    this.click.emit({newValue: this.isSelected});
   }
 
 }
