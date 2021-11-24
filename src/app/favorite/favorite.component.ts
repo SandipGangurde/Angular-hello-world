@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core'; //'1st way of the input parameter
+//import { Component, OnInit } from '@angular/core'; //2nd way of the input parameter
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  //inputs: ['isFavorite'] //2nd way of the input parameter
 })
 export class FavoriteComponent implements OnInit {
 
@@ -12,13 +13,10 @@ export class FavoriteComponent implements OnInit {
   ngOnInit(): void {
   }
   title:any;
-  isFavorite = true;
+  @Input() isFavorite: boolean = false; //'1st way of the input parameter
+  //isFavorite: boolean = false;
   onClick() {
     this.isFavorite = !this.isFavorite;
   }
 
-  private isPreposition(word: boolean){
-    
-  }
-  
 }
