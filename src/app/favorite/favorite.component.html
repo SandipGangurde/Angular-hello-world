@@ -4,10 +4,19 @@
     }
 </style> -->
 
-<i 
+<!-- <i 
     class="bi"
     [class.bi-star] = "isSelected"
     [class.bi-star-fill] ="!isSelected"
+    (click)="onClick()"
+></i> -->
+
+<i 
+    class="bi"
+    [ngClass]="{
+        'bi-star':isSelected,
+        'bi-star-fill': !isSelected
+    }"
     (click)="onClick()"
 ></i>
 <br/><br/>
