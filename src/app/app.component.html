@@ -18,3 +18,18 @@
 <courses></courses>
 <authors></authors>
 <app-course></app-course> -->
+
+<div *ngIf="courses.length>0; then courseslist else noCourses"></div>
+
+<ng-template #courseslist>
+    List of courses
+</ng-template>
+
+<ng-template #noCourses>
+    No courses yet
+</ng-template>
+
+<!-- <div *ngIf="courses.length==0">
+    No courses yet
+</div> -->
+

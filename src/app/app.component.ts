@@ -23,4 +23,5 @@ export class AppComponent {
     isLiked:true
   }
   
+  courses = [1,2];
 }
