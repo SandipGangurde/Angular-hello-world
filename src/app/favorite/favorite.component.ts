@@ -13,10 +13,10 @@ export class FavoriteComponent implements OnInit {
   ngOnInit(): void {
   }
   title:any;
-  @Input() isFavorite: boolean = false; //'1st way of the input parameter
+  @Input('isFavorite') isSelected: boolean = false; //'1st way of the input parameter
   //isFavorite: boolean = false;
   onClick() {
-    this.isFavorite = !this.isFavorite;
+    this.isSelected = !this.isSelected;
   }
 
 }
