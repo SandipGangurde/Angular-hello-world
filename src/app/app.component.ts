@@ -23,9 +23,18 @@ export class AppComponent {
     isLiked:true
   }
   
-  courses = [1,2];
+  // courses = [1,2];
 
   // ngSwitchCase start
   viewMode='map';
   // ngSwitchCase end
+
+  //ngFor start
+  courses = [
+    {id:1, name:'course1'},
+    {id:2, name:'course2'},
+    {id:3, name:'course3'},
+    {id:4, name:'course4'},
+  ];
+  //ngFor end
 }
