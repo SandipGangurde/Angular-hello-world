@@ -30,12 +30,14 @@ export class AppComponent {
   // ngSwitchCase end
 
   //ngFor start
+  /*
   courses = [
     {id:1, name:'course1'},
     {id:2, name:'course2'},
     {id:3, name:'course3'},
     {id:4, name:'course4'},
-  ];
+  ];*/
+  courses:any;
   //ngFor end
   //<!-- ngFor Change detection start -->
   onAdd() {
@@ -51,4 +53,17 @@ export class AppComponent {
     course.name = "UPDATED";
   }
   //<!-- ngFor Change detection end -->
+  
+  loadCourses(){
+    this.courses = [
+      {id:1, name:'course1'},
+      {id:2, name:'course2'},
+      {id:3, name:'course3'},
+      {id:4, name:'course4'},
+    ];
+  }
+
+  trackCourse(index:any, course:any) {
+    //return course ? this.courses.id : this.courses.id;
+  }
 }

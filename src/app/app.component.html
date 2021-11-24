@@ -74,3 +74,14 @@
     </li>
 </ul>
 <!-- ngFor Change detection end -->
+
+<!-- ngFor and TrackBy start -->
+<button (click)="loadCourses()">loadCourses</button>
+<ul>
+    <li *ngFor="let course of courses; trackBy: trackCourse"> 
+        {{ course.name }}
+        <!-- <button (click)="onRemove(course)">Remove</button> -->
+        <!-- <button (click)="onChange(course)">Update</button> -->
+    </li>
+</ul>
+<!-- ngFor and TrackBy end -->
