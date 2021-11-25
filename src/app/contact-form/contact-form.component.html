@@ -1,5 +1,5 @@
 <div class="container">
-    <form >
+    <form #f="ngForm" (ngSubmit)="submit(f)">
         <!-- label+input[type='text'].form-conrol -->
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
