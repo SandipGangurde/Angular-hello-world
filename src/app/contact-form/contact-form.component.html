@@ -1,42 +1,45 @@
 <div class="container">
     <form #f="ngForm" (ngSubmit)="submit(f)">
-        <!-- label+input[type='text'].form-conrol -->
-        <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input 
-                required 
-                minlength="4" 
-                pattern="banana" 
-                ngModel 
-                name="firstName" 
-                #firstName="ngModel" 
-                (change)="log(firstName)" 
-                id="firstName" 
-                type="text" 
-                class="form-control">
-            <div 
-                class="alert alert-danger" 
-                *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                <div *ngIf="firstName.errors?.['required']">
-                    First Name is Required.
-                </div>
-                <div *ngIf="firstName.errors?.['minlength']">
-                    Name must be at least {{firstName.errors?.['minlength'].requiredLength}} characters long.
-                </div>
-                <div *ngIf="firstName.errors?.['pattern']">
-                    First name doesn't match the pattern
+        <div ngModelGroup="contact" #contact="ngModelGroup">
+            <p *ngIf="contact.invalid">contact is invalid.</p>
+            <!-- label+input[type='text'].form-conrol -->
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input 
+                    required 
+                    minlength="4" 
+                    pattern="banana" 
+                    ngModel 
+                    name="firstName" 
+                    #firstName="ngModel" 
+                    (change)="log(firstName)" 
+                    id="firstName" 
+                    type="text" 
+                    class="form-control">
+                <div 
+                    class="alert alert-danger" 
+                    *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors?.['required']">
+                        First Name is Required.
+                    </div>
+                    <div *ngIf="firstName.errors?.['minlength']">
+                        Name must be at least {{firstName.errors?.['minlength'].requiredLength}} characters long.
+                    </div>
+                    <div *ngIf="firstName.errors?.['pattern']">
+                        First name doesn't match the pattern
+                    </div>
                 </div>
             </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comment</label>
+                <textarea 
+                    ngModel 
+                    name="comment" 
+                    id="comment" 
+                    class="form-control">
+                </textarea>  
+            </div>
+            <button class="btn btn-primary">Submit</button>
         </div>
-        <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
-            <textarea 
-                ngModel 
-                name="comment" 
-                id="comment" 
-                class="form-control">
-            </textarea>  
-        </div>
-        <button class="btn btn-primary">Submit</button>
     </form>
 </div>
