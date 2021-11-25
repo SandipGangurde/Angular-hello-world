@@ -70,4 +70,13 @@ export class AppComponent {
   //ngStyle start
   canSave=false;
   //ngStyle end
+
+  //Safe traversal operator start
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: 'John Smith'
+    }
+  }
+  //safe traversal operator end
 }
