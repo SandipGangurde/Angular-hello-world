@@ -3,8 +3,14 @@
         <!-- label+input[type='text'].form-conrol -->
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
-            <input ngModel name="firstName" required  #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
-            <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">First Name is Required.</div>
+            <input ngModel name="firstName" required minlength="4" pattern="banana" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                <div *ngIf="firstName.errors?.['required']">First Name is Required.</div>
+                <div *ngIf="firstName.errors?.['minlength']">
+                    Name must be at least {{firstName.errors?.['minlength'].requiredLength}} characters long.
+                </div>
+                <div *ngIf="firstName.errors?.['pattern']">First name doesn't match the pattern</div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
