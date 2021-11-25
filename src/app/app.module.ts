@@ -18,12 +18,14 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    SignupFormComponent,
     CourseComponent,
     CoursesComponent,
     AuthorComponent,
