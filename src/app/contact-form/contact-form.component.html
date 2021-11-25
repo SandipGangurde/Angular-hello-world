@@ -3,7 +3,8 @@
         <!-- label+input[type='text'].form-conrol -->
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
-            <input ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
+            <input ngModel name="firstName" required  #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">First Name is Required.</div>
         </div>
         <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
