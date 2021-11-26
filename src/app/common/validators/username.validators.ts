@@ -1,4 +1,5 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
+import { observable } from "rxjs";
 
 
 export class UsernameValidators {
@@ -9,15 +10,16 @@ export class UsernameValidators {
         return null;
     }
 
-    static shouldBeUnique(control : AbstractControl) :  ValidationErrors | null {
-        setTimeout(() => {
-            console.log('ok');
-            if(control.value==='sandip')
-                return { "shouldBeUnique": true };
-            return null;
-        }, 2000);
-
-        return null;
+    static shouldBeUnique(control : AbstractControl) : Promise<ValidationErrors | null> {
+        return new Promise((resolve, reject) =>{
+            setTimeout(() => {
+                if (control.value === "sandip"){
+                    resolve ({"shouldBeUnique": true});
+                }else{
+                    resolve(null);
+                }
+            }, 5000);    
+        });
     }
 
 }
