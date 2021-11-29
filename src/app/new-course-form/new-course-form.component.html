@@ -15,3 +15,12 @@
     </li>
     </ul>
 </form>
+
+<form [formGroup]="form">
+    <input formControlName="name" />
+    <div formGroupName="contact">
+        <input formControlName="email"/>
+        <input formControlName="phone"/>
+    </div>
+    <button (click)="addForm(form)">Submit</button>
+</form>

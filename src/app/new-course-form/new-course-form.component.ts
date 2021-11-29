@@ -43,4 +43,7 @@ export class NewCourseFormComponent {
   get topics() {
     return this.form.get('topics') as FormArray;
   }
+  addForm(form: FormGroup){
+    console.log(form.value);
+  }
 }
