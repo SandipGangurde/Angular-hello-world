@@ -30,7 +30,13 @@ export class PostsComponent implements OnInit {
         //  console.log(response);
       })
   }
-
+  updatePost(post: HTMLInputElement){
+    this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true })) //patch is not widely support. 
+    // this.http.put(this.url, JSON.stringify(post))
+    .subscribe(response => {
+      console.log(response);
+    })
+  }
   ngOnInit(): void {
   }
 
