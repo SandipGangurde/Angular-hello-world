@@ -11,13 +11,16 @@ export class PostsComponent implements OnInit {
   posts: any;
 
   constructor(private service: PostService) { 
-    
+
   }
 
   ngOnInit(): void {
     this.service.getPost()
       .subscribe(response => {
         this.posts = response;
+    }, error => {
+      alert('An unexpected error occurred. ');
+      console.log(error);
     });
   }
 
