@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,16 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   posts: any;
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) { 
+  constructor(private service: PostService) { 
     
   }
 
   ngOnInit(): void {
-    this.http.get(this.url)
+    this.service.getPost()
       .subscribe(response => {
-        // console.log(response);
         this.posts = response;
     });
   }
@@ -28,23 +25,21 @@ export class PostsComponent implements OnInit {
     let post: any = { title: input.value };
     input.value = '';
 
-    this.http.post(this.url, post)
-      .subscribe(response => {
-        
-        this.posts.splice(0, 0, post);
-        //  console.log(response);
-      })
+      this.service.createPost(post)
+        .subscribe(response => {
+          this.posts.splice(0, 0, post);
+          //  console.log(response);
+      });
   }
   updatePost(post: HTMLInputElement){
-    this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true })) //patch is not widely support. 
-    // this.http.put(this.url, JSON.stringify(post))
+    this.service.updatePost(post)
     .subscribe(response => {
       console.log(response);
-    })
+    });
   }
 
   deletePost(post: HTMLInputElement) {
-    this.http.delete(this.url + '/' + post.id)
+    this.service.deletePost(post.id)
     .subscribe(response => {
       let index = this.posts.indexOf(post);
       this.posts.splice(index, 1);
