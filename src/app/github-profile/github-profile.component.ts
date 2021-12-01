@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { servicesVersion } from 'typescript';
 
 @Component({
@@ -9,12 +9,15 @@ import { servicesVersion } from 'typescript';
 })
 export class GithubProfileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  // constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router){
+
+  }
 
   ngOnInit(): void {
 
-    let id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
+    // let id = this.route.snapshot.paramMap.get('id');
+    // console.log(id);
 
     // this.route.paramMap
     //   .subscribe(params => {
@@ -23,6 +26,12 @@ export class GithubProfileComponent implements OnInit {
     //     console.log(id);
     //   });
     // console.log("githubProfile OnInit");
+  }
+
+  submit() {
+    this.router.navigate(['/followers'], {
+      queryParams: { page: 1, order: 'newest'}
+    });
   }
 
 }
