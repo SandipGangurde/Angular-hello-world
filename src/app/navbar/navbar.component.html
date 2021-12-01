@@ -16,7 +16,10 @@
             <a class="nav-link" routerLinkActive="active current" aria-current="page" routerLink="">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active current" routerLink="/followers">Followers</a>
+            <a class="nav-link" routerLinkActive="active current" 
+              routerLink="/followers"
+              [queryParams]="{ page: 1, order: 'newest'}"
+              >Followers</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active current" routerLink="/posts">Posts</a>
