@@ -1,0 +1,10 @@
+.profile-icon{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.profile-card{
+    display: inline-flex;
+    margin: 1ch;
+    width: 18rem;
+}

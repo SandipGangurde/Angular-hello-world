@@ -1,5 +1,6 @@
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -22,6 +23,14 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PostsComponent } from './posts/posts.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { PostService } from './services/post.service';
+import { GithubFollowersService } from './services/github-followers.service';
+import { AppErrorHandler } from './common/app-error-handler';
 
 
 
@@ -40,7 +49,12 @@ import { PostsComponent } from './posts/posts.component';
     InputFormatDirective,
     ContactFormComponent,
     NewCourseFormComponent,
-    PostsComponent
+    PostsComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent,
+    GithubFollowersComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +63,37 @@ import { PostsComponent } from './posts/posts.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { 
+        path: '', 
+        component: HomeComponent
+      },
+      { 
+        path: 'followers', 
+        component: GithubFollowersComponent
+      },
+      { 
+        path: 'followers/:id', 
+        component: GithubProfileComponent
+      },
+      { 
+        path: 'posts', 
+        component: PostsComponent
+      },
+      { 
+        path: '**', 
+        component: NotFoundComponent
+      },
+      
+    ])
   ],
   providers: [
     CoursesService,
-    AuthorService
+    AuthorService,
+    PostService,
+    GithubFollowersService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

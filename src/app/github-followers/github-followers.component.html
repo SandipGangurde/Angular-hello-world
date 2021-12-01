@@ -1,0 +1,21 @@
+<div *ngFor="let follower of followers" class="media profile-card">
+    <!-- <div class="card-header">
+      <a href="#">
+        <img class="profile-icon img-thumbnail" src="{{ follower.avatar_url }}" alt="...">
+      </a>
+      <h4 class="media-heading">
+        <a [routerLink]="['/followers',follower.id]" >{{ follower.login }}</a>
+    </h4>
+    </div>
+    <div class="card-body">
+        <a href="follower.html_url" >{{ follower.html_url }}</a>
+        
+    </div> -->
+    <div class="card" >
+        <img src="{{ follower.avatar_url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><a [routerLink]="['/followers',follower.id]" >{{ follower.login }}</a></h5>
+          <a href="#">{{ follower.html_url }}</a>
+        </div>
+      </div>
+</div>

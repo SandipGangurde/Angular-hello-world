@@ -1,4 +1,4 @@
-import { NotFoundError } from './../common/validators/not-found-error';
+import { NotFoundError } from '../common/not-found-error';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { AppError } from '../common/validators/app-error';
