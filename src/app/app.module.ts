@@ -74,7 +74,7 @@ import { AppErrorHandler } from './common/app-error-handler';
         component: GithubFollowersComponent
       },
       { 
-        path: 'followers/:id', 
+        path: 'followers/:id/:username', 
         component: GithubProfileComponent
       },
       { 
