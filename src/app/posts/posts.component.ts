@@ -2,11 +2,38 @@ import { NotFoundError } from '../common/not-found-error';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { AppError } from '../common/validators/app-error';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.css'],
+  animations: [
+    trigger('fade', [
+
+      state('void', style({ opacity : 0})),
+
+      transition(':enter,  :leave', [
+        animate(2000)
+      ]),
+      // transition('void <=> *', [
+      //   animate(2000)
+      // ]),
+      // transition('void => *, * => void', [
+        // style({ opacity : 0}),
+        // animate(2000, style({ backgroundColor: 'white', opacity: 1}))
+        // animate(2000)
+      // ]),
+
+      // transition('* => void', [
+        // style({ opacity : 0}),
+        // animate(2000, style({ backgroundColor: 'white', opacity: 1}))
+        // animate(2000, style({ opacity: 0}))
+        // animate(2000)
+      // ])
+
+    ])
+  ]
 })
 export class PostsComponent implements OnInit {
 

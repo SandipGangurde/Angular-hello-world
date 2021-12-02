@@ -64,6 +64,7 @@ import { AppErrorHandler } from './common/app-error-handler';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { 
         path: '', 
