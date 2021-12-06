@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "https://fonts.gstatic.com";
+/* @import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"; */
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap";
+/* 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> */
 
 body { padding: 20px; }
 

@@ -3,4 +3,24 @@
 <!-- <app-posts></app-posts> -->
 <app-navbar></app-navbar>
 <br>
+<app-country></app-country>
+<div class="container">
+    <h1>Angular material ui</h1>
+    
+    <mat-checkbox
+        #showDetails
+        [value]="'checked'"
+        [checked]="isChecked"
+        (change)="onChangeChecked($event)"
+    >Show details</mat-checkbox>
+
+    <div *ngIf="showDetails.checked">Some details.....</div>
+    
+</div>
 <router-outlet></router-outlet>
+
+<h1 class="box">Heading 1</h1>
+<h2 class="modern-box">Heading 2</h2>
+<p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere voluptatem laboriosam praesentium perferendis nam molestiae accusamus suscipit quidem eligendi! Quidem voluptatum aperiam cum nulla at ex neque nihil ad non.</p>
+<button color="primary" mat-raised-button>Button 1</button>
+<button color="accent" mat-raised-button>Button 2</button>

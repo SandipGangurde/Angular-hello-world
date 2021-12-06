@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Create Record</h1>
+<div >
+  <mat-form-field>
+    <mat-label>Country Name</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Country Code</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Status">
+    <p>Status</p>
+    <mat-radio-button value="Active">Active</mat-radio-button>
+    <mat-radio-button value="Inactive">Inactive</mat-radio-button>
+  </mat-radio-group>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.country" cdkFocusInitial>Ok</button>
+</div>
+
+
+<!-- <form (submit)="$event.preventDefault()">
+  <mat-form-field appearance="fill">
+    <mat-label>First name</mat-label>
+    <input matInput #first>
+    <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Last name</mat-label>
+    <input matInput #last>
+    <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+  </mat-form-field>
+  <button>Submit</button>
+</form> -->

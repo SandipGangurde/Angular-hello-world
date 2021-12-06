@@ -80,4 +80,9 @@ export class AppComponent {
     }
   }
   //safe traversal operator end
+
+  isChecked = true;
+  onChangeChecked($event:any) {
+    console.log($event);
+  }
 }
